@@ -1,0 +1,13 @@
+version: '3.4'
+
+services:
+  ng-ui-service:
+    image: ng.ui:prod
+    build:
+      context: .
+      dockerfile: .docker/production.dockerfile
+    environment:
+      NODE_ENV: production
+    ports:
+      - 80:80
+    command: [nginx, '-g', 'daemon off;']

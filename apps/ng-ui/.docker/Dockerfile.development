@@ -1,0 +1,27 @@
+FROM node:15.8.0-alpine3.10
+LABEL author="Saurabh Palatkar"
+
+
+# set working directory
+RUN mkdir /usr/share/app
+WORKDIR /usr/share/app
+COPY decorate-angular-cli.js decorate-angular-cli.js
+COPY angular.json angular.json
+COPY nx.json nx.json
+# install and cache app dependencies
+# COPY package.json package-lock.json decorate-angular-cli.js angular.json nx.json tsconfig.base.json .eslintrc.json .prettierrc .prettierignore */
+COPY package*.json ./
+RUN npm i
+RUN npm i -g @angular/cli@11.0.0
+# COPY package-lock.json package-lock.json
+
+# add the app
+COPY . .
+RUN mkdir /apps
+RUN mkdir /apps/ng-ui
+COPY ./apps/ng-ui/ /apps/ng-ui/
+# add `node_modules/.bin` to $PATH
+ENV PATH /node_modules/.bin:$PATH
+EXPOSE 80
+EXPOSE 9222
+CMD ["ng", "serve", "--host=0.0.0.0", "--watch", "--poll=2000"]

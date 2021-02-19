@@ -1,0 +1,21 @@
+version: '3.4'
+
+services:
+  ng-ui-service:
+    image: ng.ui:dev
+    build:
+      context: .
+      dockerfile: apps/ng-ui/.docker/Dockerfile.development
+    environment:
+      NODE_ENV: development
+      DOCKER_BUILDKIT: 1
+    volumes:
+      - ./:/usr/share/app
+      - /usr/share/app/node_modules/
+      # - /app/node_modules/
+      - /usr/share/app/apps/ng-ui-e2e/
+      - /usr/share/app/apps/CoreDataApi/
+      - /usr/share/app/apps/CoreWebApi/
+    ports:
+      - 4200:80
+    command: ['ng', 'serve', '--host=0.0.0.0', '--watch', '--poll=2000']
