@@ -76,9 +76,9 @@ bld/
 #wwwroot/
 
 # VS Code Settings
-.vscode
-*/.vscode
-**/.vscode
+# .vscode
+# */.vscode
+# **/.vscode
 
 # MSTest test Results
 [Tt]est[Rr]esult*/
