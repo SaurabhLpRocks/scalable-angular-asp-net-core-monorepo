@@ -1,0 +1,52 @@
+{
+  "tslint.configFile": "./tslint.json",
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "es5",
+  "prettier.printWidth": 140,
+  "editor.formatOnSave": true,
+  "eslint.autoFixOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true,
+    "source.organizeImports": true
+  },
+  "editor.formatOnPaste": false,
+  "editor.codeActionsOnSaveTimeout": 750,
+  "editor.formatOnSaveTimeout": 750,
+  "npm.enableScriptExplorer": true,
+  "docthis.includeDateTag": true,
+  "cSpell.words": [
+    "Dropdown",
+    "SAURABH",
+    "Textbox"
+  ],
+  "peacock.color": "#5ab65c",
+  "files.exclude": {
+    "ng-app\\node_modules": true,
+    "ng-app\\dist": true,
+    "CoreWebApi\\bin": true,
+    "CoreWebApi\\obj": true,
+    "node_modules": true
+  },
+  "coloredRegions.namedColors": {
+    "MyFavoriteColor": "rgba(79, 44, 115, 0.1)",
+    "WebApi": "rgba(52, 110, 235,0.1)",
+    "DataApi": "rgba(235, 214, 52,0.1)",
+    "Angular": "rgba(221, 0, 49,0.1)"
+  },
+  "workbench.colorCustomizations": {
+    "activityBar.activeBackground": "#7dc67f",
+    "activityBar.activeBorder": "#6664bb",
+    "activityBar.background": "#7dc67f",
+    "activityBar.foreground": "#15202b",
+    "activityBar.inactiveForeground": "#15202b99",
+    "activityBarBadge.background": "#6664bb",
+    "activityBarBadge.foreground": "#e7e7e7",
+    "statusBar.background": "#5ab65c",
+    "statusBar.foreground": "#15202b",
+    "statusBarItem.hoverBackground": "#449946",
+    "titleBar.activeBackground": "#5ab65c",
+    "titleBar.activeForeground": "#15202b",
+    "titleBar.inactiveBackground": "#5ab65c99",
+    "titleBar.inactiveForeground": "#15202b99"
+  }
+}

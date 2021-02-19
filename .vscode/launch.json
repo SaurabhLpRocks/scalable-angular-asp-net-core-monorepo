@@ -1,0 +1,125 @@
+{
+  "version": "0.2.0",
+  "compounds": [
+    {
+      "name": "Launch API & UI (Live Watch)",
+      "configurations": [
+        "Web API Launch (web)",
+        "Data API Launch (web)",
+        "UI Launch"
+      ]
+    },
+    {
+      "name": "Launch API & UI (Docker)",
+      "configurations": [
+        "Docker Web API Launch",
+        "Docker Data API Launch",
+        "UI Launch (Docker)"
+      ]
+    }
+  ],
+  "configurations": [
+    //#region [WebApi]
+    {
+      "name": "Web API Launch (web)",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build-core-web-api",
+      "program": "${workspaceFolder}/apps/CoreWebApi/bin/Debug/net5.0/CoreWebApi.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}/apps/CoreWebApi",
+      "stopAtEntry": false,
+      "serverReadyAction": {
+        "action": "openExternally",
+        "pattern": "\\\\bNow listening on:\\\\s+(https?://\\\\S+)"
+      },
+      "env": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "sourceFileMap": {
+        "/Views": "${workspaceFolder}/apps/CoreWebApi/Views"
+      }
+    },
+    {
+      "name": "API Attach",
+      "type": "coreclr",
+      "request": "attach",
+      "processId": "${command:pickProcess}"
+    },
+    {
+      "name": "Docker Web API Launch",
+      "type": "docker",
+      "request": "launch",
+      "preLaunchTask": "docker-run-core-web-api: debug",
+      "netCore": {
+        "appProject": "${workspaceFolder}/apps/CoreWebApi/CoreWebApi.csproj"
+      }
+    },
+    //#endregion
+    //#region [DataApi]
+    {
+      "name": "Data API Launch (web)",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build-core-data-api",
+      "program": "${workspaceFolder}/apps/CoreDataApi/bin/Debug/net5.0/CoreDataApi.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}/apps/CoreDataApi",
+      "stopAtEntry": false,
+      "serverReadyAction": {
+        "action": "openExternally",
+        "pattern": "\\\\bNow listening on:\\\\s+(https?://\\\\S+)"
+      },
+      "env": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "sourceFileMap": {
+        "/Views": "${workspaceFolder}/apps/CoreDataApi/Views"
+      }
+    },
+    {
+      "name": "Docker Data API Launch",
+      "type": "docker",
+      "request": "launch",
+      "preLaunchTask": "docker-run-core-data-api: debug",
+      "netCore": {
+        "appProject": "${workspaceFolder}/apps/CoreDataApi/CoreDataApi.csproj"
+      }
+    },
+    //#endregion
+    //#region [Angular]
+    {
+      "name": "UI Launch",
+      "type": "chrome",
+      "request": "launch",
+      "preLaunchTask": "ng serve dev local",
+      "postDebugTask": "Terminate All Tasks",
+      "url": "http://localhost:80/#",
+      "webRoot": "${workspaceFolder}",
+      "sourceMapPathOverrides": {
+        "webpack:/*": "${webRoot}/*",
+        "/./*": "${webRoot}/*",
+        "/src/*": "${webRoot}/*",
+        "/*": "*",
+        "/./~/*": "${webRoot}/node_modules/*"
+      }
+    },
+    {
+      "name": "UI Launch (Docker)",
+      "type": "chrome",
+      "request": "launch",
+      "preLaunchTask": "serve ui dev docker",
+      "postDebugTask": "remove ui dev docker container",
+      "url": "http://localhost:4200",
+      "webRoot": "${workspaceFolder}",
+      "sourceMapPathOverrides": {
+        "webpack:/*": "${webRoot}/*",
+        "/./*": "${webRoot}/*",
+        "/src/*": "${webRoot}/*",
+        "/*": "*",
+        "/./~/*": "${webRoot}/node_modules/*"
+      }
+    }
+    //#endregion
+  ]
+}

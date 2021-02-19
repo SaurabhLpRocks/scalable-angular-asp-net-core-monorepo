@@ -3,6 +3,7 @@ version: '3.4'
 services:
   ng-ui-service:
     image: ng.ui:dev
+    container_name: ng.ui.dev
     build:
       context: .
       dockerfile: apps/ng-ui/.docker/Dockerfile.development
