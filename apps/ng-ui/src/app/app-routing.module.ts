@@ -1,19 +1,19 @@
 import { NgModule } from '@angular/core';
 import {
-  ExtraOptions, PreloadAllModules, RouterModule, Routes
+    ExtraOptions, PreloadAllModules, RouterModule, Routes
 } from '@angular/router';
 
 export const routes: Routes = [
   {
     path: 'auth',
     // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-    loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
+    loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule),
   },
   {
     path: 'pages',
     // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-    loadChildren: () => import('./pages').then(m => m.PagesModule),
-    canActivate: []
+    loadChildren: () => import('./pages').then((m) => m.PagesModule),
+    canActivate: [],
   },
   { path: '', redirectTo: '/pages/dashboard', pathMatch: 'full' },
 ];
@@ -21,11 +21,11 @@ export const routes: Routes = [
 const config: ExtraOptions = {
   useHash: false,
   preloadingStrategy: PreloadAllModules,
-  onSameUrlNavigation: 'reload'
+  onSameUrlNavigation: 'reload',
 };
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, config)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

@@ -7,6 +7,9 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent {
-  title = 'angular-scalable-template';
+  // #region Properties (1)
 
+  public title = 'angular-scalable-template';
+
+  // #endregion Properties (1)
 }

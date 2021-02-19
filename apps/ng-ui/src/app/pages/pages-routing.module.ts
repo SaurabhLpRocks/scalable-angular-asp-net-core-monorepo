@@ -4,21 +4,22 @@ import { RouterModule, Routes } from '@angular/router';
 import { PagesComponent } from './pages.component';
 
 const routes: Routes = [
-    {
-        path: '',
-        component: PagesComponent,
+  {
+    path: '',
+    component: PagesComponent,
 
-        children: [
-            {
-                path: 'dashboard',
-                loadChildren: () => import('./dashboard').then(me => me.DashboardModule)
-            }
-        ]
-    }
+    children: [
+      {
+        path: 'dashboard',
+        loadChildren: () =>
+          import('./dashboard').then((me) => me.DashboardModule),
+      },
+    ],
+  },
 ];
 
 @NgModule({
-    imports: [RouterModule.forChild(routes)],
-    exports: [RouterModule]
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule],
 })
-export class PagesRoutingModule { }
+export class PagesRoutingModule {}

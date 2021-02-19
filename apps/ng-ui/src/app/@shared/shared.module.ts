@@ -13,32 +13,20 @@ import { FormsModule } from '@angular/forms';
 import { FileUploadComponent } from './components';
 import { SafePipe } from './pipes';
 
-const ANGULAR_MODULES = [
-  CommonModule,
-  FormsModule
-];
+const ANGULAR_MODULES = [CommonModule, FormsModule];
 
 const THIRD_PARTY_MODULES: never[] = [];
 
 const THIRD_PARTY_SERVICES: never[] = [];
 
-const PIPES = [
-  SafePipe,
-];
+const PIPES = [SafePipe];
 
-const COMPONENTS = [
-  FileUploadComponent,
-];
+const COMPONENTS = [FileUploadComponent];
 
 @NgModule({
   imports: [...ANGULAR_MODULES, ...THIRD_PARTY_MODULES],
   declarations: [...COMPONENTS, ...PIPES],
   exports: [...COMPONENTS, ...PIPES, ...THIRD_PARTY_MODULES],
-  providers: [...THIRD_PARTY_SERVICES]
+  providers: [...THIRD_PARTY_SERVICES],
 })
-export class SharedModule {
-
-}
-
-
-
+export class SharedModule {}

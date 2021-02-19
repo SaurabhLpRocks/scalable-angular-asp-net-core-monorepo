@@ -13,7 +13,7 @@
   },
   "editor.formatOnPaste": false,
   "docthis.includeDateTag": true,
-  "cSpell.words": ["Dropdown", "SAURABH", "Textbox", "ngneat"],
+  "cSpell.words": ["Dropdown", "SAURABH", "Textbox", "endregion", "ngneat"],
   "peacock.color": "#5ab65c",
   "files.exclude": {
     "ng-app\\node_modules": true,
@@ -81,5 +81,6 @@
     }
   ],
   "importSorter.generalConfiguration.sortOnBeforeSave": true,
-  "tsco.organizeOnSave": true
+  "tsco.organizeOnSave": true,
+  "editor.linkedEditing": true
 }

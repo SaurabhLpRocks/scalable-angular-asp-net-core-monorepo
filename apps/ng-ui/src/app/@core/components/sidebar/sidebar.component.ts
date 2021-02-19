@@ -8,10 +8,9 @@ import { Router } from '@angular/router';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SidebarComponent {
-  constructor(private router: Router) {
+  // #region Constructors (1)
 
+  constructor(private router: Router) {}
 
-  }
-
-
+  // #endregion Constructors (1)
 }
