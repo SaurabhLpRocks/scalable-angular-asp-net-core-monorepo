@@ -3,7 +3,10 @@ import {
   ModuleWithProviders, NgModule, Optional, SkipSelf
 } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { HotToastModule } from '@ngneat/hot-toast';
+import { InspectorModule } from '@ngneat/inspector';
 import { HelperService } from '@shared/services/helper.service';
+import { environment } from './../../environments/environment';
 import {
   FooterComponent, HeaderComponent, SidebarComponent, SpinnerComponent
 } from './components';
@@ -14,10 +17,15 @@ import {
 } from './utils';
 
 
+const THIRD_PARTY_MODULES = [
+  HotToastModule.forRoot(),
+  environment.production ? [] : InspectorModule.forRoot()
+]
+
 const COMPONENTS = [FooterComponent, HeaderComponent, SidebarComponent, SpinnerComponent];
 
 @NgModule({
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, ...THIRD_PARTY_MODULES],
   exports: [...COMPONENTS],
   declarations: [...COMPONENTS],
   providers: [HelperService, ...httpInterceptorProviders, ErrorLoggerService, HttpErrorHandlerService]

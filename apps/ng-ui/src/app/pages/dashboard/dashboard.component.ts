@@ -8,7 +8,7 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-
+  title = 'Dashboard Component';
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
