@@ -1,6 +1,6 @@
 FROM node:15.8.0-alpine3.10 as angular-built
 WORKDIR /usr/src/app
-RUN npm i -g @angular/cli@11.0.0
+RUN npm i -g @angular/cli@11.2.0
 COPY package.json package.json
 COPY package-lock.json package-lock.json
 RUN npm install --silent

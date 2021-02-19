@@ -12,7 +12,7 @@ COPY nx.json nx.json
 # COPY package.json package-lock.json decorate-angular-cli.js angular.json nx.json tsconfig.base.json .eslintrc.json .prettierrc .prettierignore */
 COPY package*.json ./
 RUN npm i
-RUN npm i -g @angular/cli@11.0.0
+RUN npm i -g @angular/cli@11.2.0
 # COPY package-lock.json package-lock.json
 
 # add the app
