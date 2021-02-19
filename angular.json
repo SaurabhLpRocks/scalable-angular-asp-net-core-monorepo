@@ -1,7 +1,8 @@
 {
   "version": 1,
   "cli": {
-    "defaultCollection": "@nrwl/angular"
+    "defaultCollection": "@nrwl/angular",
+    "analytics": false
   },
   "schematics": {
     "@nrwl/angular": {
@@ -36,7 +37,7 @@
       "projectType": "application",
       "root": "apps/ng-ui",
       "sourceRoot": "apps/ng-ui/src",
-      "prefix": "scalable-angular-asp-net-core-monorepo",
+      "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",

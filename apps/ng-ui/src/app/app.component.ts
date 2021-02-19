@@ -1,16 +1,12 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
-  selector: 'scalable-angular-asp-net-core-monorepo-root',
+  selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent {
-  title = 'ng-ui';
-  /**
-   *
-   */
-  constructor() {
-    console.log('test')
-  }
+  title = 'angular-scalable-template';
+
 }

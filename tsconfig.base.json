@@ -14,7 +14,10 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@core/*": ["./apps/ng-ui/src/app/@core/*"],
+      "@shared/*": ["./apps/ng-ui/src/app/@shared/*"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

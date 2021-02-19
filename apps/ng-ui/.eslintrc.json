@@ -14,7 +14,7 @@
           "error",
           {
             "type": "attribute",
-            "prefix": "scalable-angular-asp-net-core-monorepo",
+            "prefix": "app",
             "style": "camelCase"
           }
         ],
@@ -22,7 +22,7 @@
           "error",
           {
             "type": "element",
-            "prefix": "scalable-angular-asp-net-core-monorepo",
+            "prefix": "app",
             "style": "kebab-case"
           }
         ]
