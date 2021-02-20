@@ -82,5 +82,9 @@
   ],
   "importSorter.generalConfiguration.sortOnBeforeSave": true,
   "tsco.organizeOnSave": true,
-  "editor.linkedEditing": true
+  "editor.linkedEditing": true,
+  "[csharp]": {
+    "editor.formatOnSave": true
+    // "editor.defaultFormatter": "Leopotam.csharpfixformat"
+  }
 }
