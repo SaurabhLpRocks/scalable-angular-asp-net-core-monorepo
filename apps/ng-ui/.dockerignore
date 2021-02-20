@@ -1,6 +1,6 @@
 **/.classpath
 **/.dockerignore
-**/.env
+# **/.env
 **/.git
 **/.gitignore
 **/.project
@@ -23,8 +23,6 @@
 **/secrets.dev.yaml
 **/values.dev.yaml
 README.md
-**/CoreDataApi
-**/CoreWebApi
 
 # editor configs
 Properties
@@ -41,8 +39,8 @@ npm-debug.log
 log
 
 # .Net project files
-*.csproj
-*.cs
+# *.csproj
+# *.cs
 
 # docs
 *.md
